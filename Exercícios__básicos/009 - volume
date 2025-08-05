@@ -1,0 +1,16 @@
+// Calcule e apresente o valor do volume de uma lata de óleo, dado seu raio e sua altura.
+#include <stdio.h>
+
+int main()
+{
+    float volume, pi = 3.14;
+    float altura, raio;
+    
+    printf("Informe a altura e o raio da lata de oleo: ");
+    scanf ("%f %f", &altura, &raio);
+    
+    volume = pi * (raio * raio) * altura;
+    printf("\n O volume da lata é de, aproximadaente, %0.2fcm cubicos", volume);
+
+    return 0;
+}

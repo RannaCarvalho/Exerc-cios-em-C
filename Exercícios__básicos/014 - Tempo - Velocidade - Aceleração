@@ -1,0 +1,21 @@
+/* Em uma cidade se deseja sincronizar os semáforos. Com isto, quando um semáforo abre
+(fica verde), os veículos que nele estavam parados tendem a encontrar os próximos semáforos também abertos, para que encontre o próximo semáforo aberto, este deve abrir
+um pouco antes da chegada do veículo (por ex: 3 segundos antes). Faça um algoritmo que informe quanto tempo depois um semáforo deve abrir */
+#include <stdio.h>
+
+int main()
+{
+    int velocidade, distancia, aceleracao;
+    float tempo, tempo_a, distancia_a, tempo_final;
+
+    printf("Informe a velocidade e a aceleração do carro e informe a distancia ate o proximo semaforo: ");
+    scanf ("%d %d %d", &velocidade, &aceleracao, &distancia);
+    
+    tempo_a = velocidade/ aceleracao;
+    distancia_a = (velocidade * velocidade) / (2 * aceleracao);
+    tempo = (distancia - distancia_a) / velocidade;
+    tempo_final = tempo_a + tempo - 0.3;
+    
+    printf ("O tempo em que o proximo sinal deve abrir e de: %0.2f segundos", tempo_final);
+    return 0;
+}

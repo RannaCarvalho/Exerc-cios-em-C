@@ -1,0 +1,17 @@
+// Conversão de Fahrenheit para Celsius
+#include <stdio.h>
+
+int main()
+{
+    float grau_f;
+    float grau_c;
+    
+    printf("Informe a temperatura em Fahrenheit: ");
+    scanf ("%f", &grau_f);
+    
+    grau_c = (5 * (grau_f - 32)) / 9;
+    
+    printf("\n A temperatura em graus Celsius é de: %0.2f", grau_c);
+
+    return 0;
+}

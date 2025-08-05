@@ -1,0 +1,26 @@
+// Converter um inteiro informado menor que 32 para sua representação em binário.
+#include <stdio.h>
+
+int main()
+{
+    int numero, base;
+    int b0, b1, b2, b3, b4, binario;
+    
+    printf("Informe um numero positivo menor que 32: ");
+    scanf ("%d", &numero);
+    
+    base = 2;
+    b4 = numero%base;
+    numero /= base;
+    b3 = numero%base;
+    numero /= base;
+    b2 = numero%base;
+    numero /= base;
+    b1 = numero%base;
+    numero /= base;
+    b0 = numero%base;
+    
+    binario = b0*10000 + b1*1000 + b2*100 + b3*10 + b4;
+    printf ("o numero %d em binario é: %05i", numero, binario);
+    return 0;
+}

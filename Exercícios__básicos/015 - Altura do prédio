@@ -1,0 +1,21 @@
+/* você deseja medir a altura de um prédio, porém, a trena não é suficientemente longa. 
+Assumindo que seja possível medir sua sombra e a do prédio no chão, e que você lembre da sua altura, 
+faça um programa para ler os dados necessários e calcular a altura do prédio. */
+#include <stdio.h>
+
+int main()
+{
+    float altura_pessoa, altura_predio, sombra_pessoa, sombra_predio;
+
+    printf("Informe a sua altura: ");
+    scanf ("%f", &altura_pessoa);
+    printf("Informe a altura da sua sombra: ");
+    scanf ("%f", &sombra_pessoa);
+    printf("Informe a altura da sombra do predio: ");
+    scanf ("%f", &sombra_predio);
+    
+    altura_predio = (altura_pessoa * sombra_predio) / sombra_pessoa;
+    
+    printf ("\n A altura do predio sera de: %0.2f", altura_predio);
+    return 0;
+}

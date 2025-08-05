@@ -1,0 +1,16 @@
+/* Faça um algoritmo que transforme uma velocidade fornecida em m/s pelo usuário para
+Km/h. Para tal, multiplique o valor em m/s por 3,6 */
+#include <stdio.h>
+
+int main()
+{
+    float velocidade_ms, velocidade_kh;
+
+    printf("Informe a velocidade em metros por segundo: ");
+    scanf ("%f", &velocidade_ms);
+    
+    velocidade_kh = velocidade_ms * 3.6;
+    
+    printf ("A velocidade em km/h é de: %0.2f", velocidade_kh);
+    return 0;
+}

@@ -1,0 +1,17 @@
+// Ler dois números inteiros e exibir o quociente e o resto da divisão inteira entre eles
+#include <stdio.h>
+
+int main()
+{
+    int dividendo, divisor;
+    float divisao, resto;
+    
+    printf("Informe o dividendo e o divisor: ");
+    scanf ("%d %d", &dividendo, &divisor);
+    
+    divisao = dividendo / divisor;
+    resto = dividendo % divisor;
+    printf("\n o resutado da divisao é %0.2f e o rsto é %0.2f", divisao, resto);
+
+    return 0;
+}

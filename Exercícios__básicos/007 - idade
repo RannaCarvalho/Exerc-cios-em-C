@@ -1,0 +1,22 @@
+// Solicitar a idade de uma pessoa em dias e informar na tela a idade em anos, meses e dias.
+#include <stdio.h>
+
+int main()
+{
+    int idade;
+    float meses, dias;
+    
+    printf("Informe sua idade: ");
+    scanf ("%d", &idade);
+    
+    meses = idade * 12;
+    dias = idade * 365.6;
+    
+    printf("\n sua idade em anos: %d", idade);
+    printf("\n sua idade em meses: %2.f", meses);
+    printf("\n sua idade em dias: %2.f", dias);
+
+
+
+    return 0;
+}

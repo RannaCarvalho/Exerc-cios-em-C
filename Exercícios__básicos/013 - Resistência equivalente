@@ -1,0 +1,17 @@
+/* Um circuito elétrico é composto de duas resistências R1 e R2 em paralelo, e ambas em
+sequência de uma resistência R3. Faça um algoritmo para calcular a resistência equivalente desse circuito */
+#include <stdio.h>
+
+int main()
+{
+    int R1, R2, R3;
+    float REQ;
+
+    printf("Informe os valores das 3 resistencias: ");
+    scanf ("%d %d %d", &R1, &R2, &R3);
+    
+    REQ = ((R1*R2)/(R1+R2)) + R3;
+    
+    printf ("A resistência equivalente é de: %0.2f", REQ);
+    return 0;
+}

@@ -1,0 +1,17 @@
+// calculo da area e perimetro de um retangulo
+#include <stdio.h>
+int main()
+{
+    float base, altura;
+    float area, perimetro;
+    
+    printf("Informe a base e a altura de um retangulo: ");
+    scanf ("%f %f", &base, &altura);
+    
+    area = base * altura;
+    perimetro = 2 * (base+altura);
+    
+    printf("\n A area do retangulo é de %0.f, e o perimetro é de %0.f", area, perimetro);
+
+    return 0;
+}

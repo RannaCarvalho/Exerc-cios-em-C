@@ -1,0 +1,15 @@
+// Ler um numero inteiro e exibir o seu sucessor.
+#include <stdio.h>
+
+int main()
+{
+    int numero, sucessor;
+    
+    printf("Informe um numero: ");
+    scanf ("%d", &numero);
+    
+    sucessor = numero +1;
+    printf("\n O sucessor do numero %d é %d", numero, sucessor);
+
+    return 0;
+}

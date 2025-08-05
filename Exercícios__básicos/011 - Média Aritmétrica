@@ -1,0 +1,23 @@
+/* Faça um algoritmo para calcular a nota semestral de um aluno. A nota semestral é obtida
+pela média aritmética entre a nota de 2 bimestres. Cada nota de bimestre é composta por
+2 notas de provas. */
+#include <stdio.h>
+
+int main()
+{
+    float nota_semestral, nota_bimestre1, nota_bimestre2;
+    int nota1, nota2, nota3, nota4;
+
+    printf("Informe as duas notas do primeiro bimestre: ");
+    scanf ("%d %d", &nota1, &nota2);
+    printf("Informe as duas notas do segundo bimestre: ");
+    scanf ("%d %d", &nota3, &nota4);
+    
+    nota_bimestre1 = nota1 + nota2;
+    nota_bimestre2 = nota3 + nota4;
+    
+    nota_semestral = (nota_bimestre1 + nota_bimestre2) / 2;
+    
+    printf ("A media semestral do aluno é de: %0.2f", nota_semestral);
+    return 0;
+}

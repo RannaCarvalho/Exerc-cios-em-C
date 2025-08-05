@@ -1,0 +1,20 @@
+//Escreva um programa para gerar o invertido de um número com três algarismos
+#include <stdio.h>
+
+int main()
+{
+    int numero;
+    int n1, n2, n3, invertido;
+
+    printf("Informe um numero de ate 3 algarismos: ");
+    scanf ("%03i", &numero);
+    
+    n1 = numero / 100;
+    n2 = (numero/10) % 10;
+    n3 = numero % 10;
+    
+    invertido = n3*100 + n2*10 + n1;
+    
+    printf ("\n o numero %d invertido e %d", numero, invertido);
+    return 0;
+}

@@ -1,0 +1,18 @@
+// calculo da area e perimetro de um quadrado
+#include <stdio.h>
+
+int main()
+{
+    float lado;
+    float area, perimetro;
+    
+    printf("Informe a base e a altura de um quadrado: ");
+    scanf ("%f", &lado);
+    
+    area = lado * lado;
+    perimetro = 2 * (lado+lado);
+    
+    printf("\n A area do quadrado é de %0.f, e o perimetro é de %0.f", area, perimetro);
+
+    return 0;
+}

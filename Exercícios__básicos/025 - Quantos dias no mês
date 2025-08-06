@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main()
+{
+    int mes; 
+    
+    printf("Digite o numero do mes: ");
+    scanf ("%d", &mes);
+    
+    if (mes == 2) printf ("o mes %d tem 28 dias", mes);
+    else if (mes==4||mes==6||mes==9||mes==11) printf ("o mes %d tem 30 dias", mes);
+    else printf("o mes %d tem 31 dias", mes);
+
+    return 0;
+}

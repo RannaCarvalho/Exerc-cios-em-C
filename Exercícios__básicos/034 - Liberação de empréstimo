@@ -1,0 +1,27 @@
+/*algoritmo leia a renda mensal de um solicitante, o valor total do empréstimo solicitado e o
+número de prestações que o solicitante deseja pagar e informe se o empréstimo pode ou não ser concedido.
+O valor total só pode ser até 10x a renda mensal e o valor da parcela só pode ser até 30% da renda mensal*/
+#include <stdio.h>
+#include <locale.h>
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+    float qtd_parcelas, valor_emprestimo, renda_mensal, valor_prestação, valor_max, max_prest;
+    
+    printf("Informe o valor da renda mensal do solicitante: ");
+    scanf ("%f", &renda_mensal);
+    printf("Informe o valor total do empréstimo e a quantidade de parcelas: ");
+    scanf ("%f %f", &valor_emprestimo, &qtd_parcelas);
+    
+    valor_prestação = valor_emprestimo / qtd_parcelas;
+    valor_max = renda_mensal*100;
+    max_prest = renda_mensal*0.03;
+    
+    if (valor_emprestimo > valor_max) printf ("O empréstimo não pode ser solicitado");
+    else if (valor_prestação > max_prest) printf ("O empréstimo não pode ser solicitado");
+    else printf ("\n O empréstimo pode ser solicitado; Valor das parcelas: R$%0.2f", valor_prestação);
+    
+    
+    return 0;
+}

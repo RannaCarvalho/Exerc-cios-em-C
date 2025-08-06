@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main()
+{
+    float salario, desconto;
+    
+    printf("Digite o valor do salario do funcionario: ");
+    scanf ("%f", &salario);
+    
+    desconto = salario * 0.11;
+    if (desconto>334.29) desconto = 334.29;
+    printf("o desconto do salario R$%0.2f e de R$%0.2f", salario, desconto);
+
+    return 0;
+}

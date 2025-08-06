@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main()
+{
+    int variavel1, variavel2;
+    int aux;
+    
+    printf("Digite duas variaveis de numero inteiro: ");
+    scanf ("%d %d", &variavel1, &variavel2);
+    
+    aux = variavel1;
+    variavel1 = variavel2;
+    variavel2 = aux;
+    
+    printf ("variavel 1: %d; variavel 2: %d", variavel1, variavel2);
+
+    
+    
+    return 0;
+}

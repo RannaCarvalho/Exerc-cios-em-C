@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main()
+{
+    float passes_completos, passes_tentados, jardas, passes_touchdows, passes_interceptados, soma;
+    
+    printf("Informe a quantidade de passos completos e quantidade de passos tentados: ");
+    scanf ("%f %f", &passes_completos, &passes_tentados);
+    printf("Informe a quantidade de jardas passadas: ");
+    scanf ("%f", &jardas);
+    printf("Informe a quantidade de passes para touchdows: ");
+    scanf ("%f", &passes_touchdows);
+    printf("Informe a quantidade de passes interceptados: ");
+    scanf ("%f", &passes_interceptados);
+    
+    passes_completos/= passes_tentados;
+    passes_completos = (passes_completos- 0.3)/2;
+    if (passes_completos>2.375) passes_completos = 2.375;
+    else if (passes_completos<0) passes_completos = 0;
+    
+    jardas/=passes_tentados; 
+    jardas = (jardas - 3) /4;
+    if (jardas>2.375) jardas = 2.375;
+    else if (jardas<0) jardas = 0;
+    
+    passes_touchdows/=passes_tentados;
+    passes_touchdows/=0.05;
+    if (passes_touchdows>2.375) passes_touchdows = 2.375;
+    else if (passes_touchdows<0) passes_touchdows = 0;
+    
+    passes_interceptados/=passes_tentados;
+    passes_interceptados = (passes_interceptados - 0.095) /0.04;
+    if (passes_interceptados>2.375) passes_interceptados = 2.375;
+    else if (passes_interceptados<0) passes_interceptados = 0;
+    
+    soma = (((passes_completos + jardas + passes_touchdows + passes_interceptados) *100) /6);
+    
+    printf ("\n QB Rating do quarterback: %0.4f", soma);
+    return 0;
+}

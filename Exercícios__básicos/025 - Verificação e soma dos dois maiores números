@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main()
+{
+    int numero1, numero2, numero3;
+    int soma;
+    
+    printf("Digite tres numeros inteiros: ");
+    scanf ("%d %d %d", &numero1, &numero2, &numero3);
+    
+    if ((numero1>numero2 && numero2>numero3)||(numero2>numero1 && numero1>numero3)) soma = numero1 + numero2;
+    if ((numero1>numero3 && numero3>numero2)||(numero3>numero1 && numero1>numero2)) soma = numero1 + numero3;
+    if ((numero2>numero3 && numero3>numero1)||(numero3>numero2 && numero2>numero1)) soma = numero2 + numero3;
+    
+    printf ("a soma dos dois maiores numeros: %d", soma);
+
+    return 0;
+}

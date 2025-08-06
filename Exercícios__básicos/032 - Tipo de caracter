@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+    char caracter;
+    
+    printf("Digite um caracter: ");
+    scanf ("%c", &caracter);
+    
+    if (caracter>= '0' && caracter<='9') printf ("O caracter digitado é um numero");
+    else if(caracter >= 'a' && caracter <= 'z' || caracter >= 'A' && caracter <= 'Z'){ 
+		if(caracter == 'a' || caracter == 'e' || caracter == 'i' || caracter == 'o' || caracter == 'u' || caracter == 'A' || caracter == 'E' || caracter == 'I' || caracter == 'O' || caracter == 'U'){
+			printf("O caracter digitado é uma vogal");
+		} else {
+			printf("O caracter digitado é uma consoante");
+		}}
+	else printf ("O caracter digitado é um símbolo");
+
+    return 0;
+}

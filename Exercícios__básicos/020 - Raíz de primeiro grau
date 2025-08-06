@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main()
+{
+    int valorA, valorB;
+    int X;
+    
+    printf("Digite os valores de a e b: ");
+    scanf ("%d %d", &valorA, &valorB);
+    
+    X = (valorB*-1)/ valorA;
+    printf ("valor de X: %d", X);
+    return 0;
+}

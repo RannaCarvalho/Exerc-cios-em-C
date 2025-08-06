@@ -4,7 +4,7 @@ int main()
 {
     int numero;
     
-    printf("Digite um numero negativo ou positivo: ");
+    printf("Digite um numero inteiro: ");
     scanf ("%d", &numero);
     
     if (numero%2==0 || numero==0){

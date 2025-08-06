@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main()
+{
+    int valor1, valor2, valor3;
+    float peso, peso1=5, peso2=2.5, media_ponderada;
+    
+    printf("Digite tres valores: ");
+    scanf ("%d %d %d", &valor1, &valor2, &valor3);
+    
+    peso = peso1 + (2*peso2);
+    if (valor1>valor2 && valor1>valor3){
+        media_ponderada = ((valor1*peso1) + (valor2*peso2) + (valor3*peso2));
+    }
+    if (valor2>valor1 && valor2>valor3){
+        media_ponderada = ((valor2*peso1) + (valor1*peso2) + (valor3*peso2));
+    }
+    if (valor3>valor2 && valor3>valor1){
+        media_ponderada = ((valor3*peso1) + (valor2*peso2) + (valor1*peso2));
+    }
+    
+    printf ("media ponderada: %0.2f", media_ponderada);
+
+    return 0;
+}

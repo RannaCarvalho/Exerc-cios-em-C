@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main()
+{
+    int valor, resto;
+    float entrada, prestacao;
+    
+    printf("Digite o valor do produto: ");
+    scanf ("%d", &valor);
+    resto = valor%3;
+    if (resto == 0){
+        entrada = prestacao = valor/3;
+        printf ("entrada e prescoes: R$%0.2f", entrada);
+    }
+    else{
+        prestacao = valor/3;
+        entrada = valor - (2*prestacao);
+        printf ("entrada: R$%0.2f; 2 prescoes: R$%0.2f", entrada, prestacao);
+    }
+    
+    return 0;
+}

@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main()
+{
+    int numero;
+    
+    printf("Digite um numero negativo ou positivo: ");
+    scanf ("%d", &numero);
+    
+    if (numero%2==0 || numero==0){
+        printf ("o numero %d e par", numero);
+    }
+    else {
+        printf ("o numero %d nao e par", numero);
+    }
+    
+    return 0;
+}

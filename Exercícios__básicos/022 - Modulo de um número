@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main()
+{
+    int numero, modulo;
+    
+    printf("Digite um numero negativo ou positivo: ");
+    scanf ("%d", &numero);
+    modulo = numero;
+    if (numero<0){
+        modulo = numero * -1;
+    }
+    printf ("modulo de %d e %d", numero, modulo);
+    return 0;
+}

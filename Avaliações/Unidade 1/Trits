@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+
+    char str[5]; 
+    int pesos[4] = {27, 9, 3, 1};
+    int decimal = 0;
+    int tam, j, trit;
+
+    printf("Digite um número de até 4 trits: ");
+    scanf("%4s", str);
+
+    for(tam = 0; str[tam] != '\0'; tam++);
+
+    for(j = 0; tam > 0; tam--, j++){
+        trit = str[tam-1] - '0';
+        if(trit == 2)
+            decimal += pesos[3 - j];   
+        else if(trit == 0)
+            decimal -= pesos[3 - j];   
+    }
+
+    printf("\nO número em decimal é: %d\n", decimal);
+    return 0;
+}

@@ -1,0 +1,19 @@
+/* Escreva um programa que calcule o quociente da divisão de A por B (número inteiros e
+positivos), ou seja, A / B, através de subtrações sucessivas..*/
+#include <stdio.h>
+#include <locale.h>
+
+int main(){
+	setlocale(LC_ALL, "Portuguese");
+	
+	int i, dividendo, divisor, quociente;
+	
+	printf ("Digite o dividendo e o divisor: ");
+	scanf ("%d %d", &dividendo, &divisor);
+	quociente = dividendo;
+	while (quociente>(dividendo/divisor)){
+	    quociente--;
+	}
+    printf("O quociente da divisão: %d", quociente);
+    return 0;
+}

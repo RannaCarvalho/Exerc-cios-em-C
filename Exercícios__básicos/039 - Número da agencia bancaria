@@ -1,0 +1,26 @@
+/*Escreva um programa que te como saída o número completo da agencia*/
+#include <stdio.h>
+#include <locale.h>
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+    int numero_digi, digito1, digito2, digito3, digito4;
+    int numero_agencia, soma, cod_verificador;
+    
+    printf ("Digite os 4 digitos da sua conta: ");
+    scanf ("%d", &numero_digi);
+    
+   digito1 = numero_digi/1000;
+   digito2 = (numero_digi/100)%10;
+   digito3 = (numero_digi/10)%10;
+   digito4 = (numero_digi%10);
+   
+   soma = (digito1*5) + (digito2*4) + (digito3*3) + (digito4*2);
+   cod_verificador = (soma%11) - 11;
+   numero_agencia = (digito1*1000) + (digito2*100) + (digito3*10) + digito4;
+   
+   printf("O número completo da agencia é %d-%d", numero_agencia, cod_verificador);
+   
+    return 0;
+}

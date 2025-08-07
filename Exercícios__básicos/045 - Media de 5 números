@@ -1,0 +1,23 @@
+/*Escreva um programa que leia 5 números, e imprima a média entre eles.*/
+#include <stdio.h>
+#include <locale.h>
+
+int main(){
+	setlocale(LC_ALL, "Portuguese");
+	
+	int i, soma;
+	float media;
+	int numeros[5];
+	
+	for (i=0; i<5; i++){
+	    printf ("Número %d: ", i+1);
+	    scanf ("%d", &numeros[i]);
+	}
+	
+	for (i=0; i<5; i++){
+	    soma+=numeros[i];
+	}
+	media = soma/5;
+	printf("\n A media de todos os números: %0.2f", media);
+	return 0;
+}

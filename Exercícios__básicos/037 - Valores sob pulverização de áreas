@@ -1,0 +1,40 @@
+/*Fazer um algoritmo que leia: o tipo de pulverização
+(1 a 4) e área a ser pulverizada; e imprima o valor a ser pago*/
+#include <stdio.h>
+#include <locale.h>
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+    float acres, valor, desconto1, desconto2;
+    int tipo;
+    printf ("Digite o numero do tipo de praga a ser combatida: \n1-Ervas daninhas\n2-Gafanhotos\n3-Broca\n4-Todos\nOpição: ");
+    scanf ("%d", &tipo);
+    printf ("\nInforme a quantidade de acres da área a ser pulverizada: ");
+    scanf ("%f", &acres); 
+    
+    switch(tipo){
+		case 1: valor = acres * 50.0;
+			break;
+		case 2: valor = acres * 100;
+			break;
+		case 3: valor = acres * 150;
+			break;
+		case 4: valor = acres * 250;
+			break;
+		default: printf("Insira um tipo válido");
+	}
+	
+    if(acres>1000){
+        desconto1 = valor*0.05;
+        valor-=desconto1;
+    } 
+    if(valor>750){
+        desconto2 = (valor - 750)*0.10;
+        valor -= desconto2;
+    }
+    
+    printf("O valor a ser pago é de: R$%0.2f", valor);
+    
+    return 0;
+}

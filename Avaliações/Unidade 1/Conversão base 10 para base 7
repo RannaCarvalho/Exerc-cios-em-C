@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main(){
+	setlocale(LC_ALL, "Portuguese");
+	
+	int base10, base7, resto, numero, soma=0;
+	
+	printf ("Digite um número, na base 10, para ser convertido: ");
+	scanf ("%d", &base10);
+    numero = base10;
+    while (numero>0){
+	    resto = numero%7;
+	    soma += resto;
+	    numero = numero/7;
+	} 
+	base7 = soma%7;
+	printf("\nO número com o dv é %d%d", base10, base7);
+	return 0;
+}

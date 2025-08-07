@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main(){
+	setlocale(LC_ALL, "Portuguese");
+	
+	int base, qtd_1 = 0, numero, dig1, dig2, dig3, dig4, dig5;
+	
+	printf ("Digite um número para ser verificado entre 0 e 31: ");
+	scanf ("%d", &numero);
+	if (numero>= 32) printf("ERR0R - Digite um número válido");
+	
+	base = 2;
+	dig5 = numero%base;
+	numero/=base;
+    dig4 = numero%base;
+	numero/=base;
+	dig3 = numero%base;
+	numero/=base;
+	dig2 = numero%base;
+	numero/=base;
+	dig1 = numero%base;
+    qtd_1 = dig1 + dig2 + dig3 + dig4 + dig5;
+    printf ("O número total de números 1 do número %d em binário é: %d", numero, qtd_1);
+
+	return 0;
+}

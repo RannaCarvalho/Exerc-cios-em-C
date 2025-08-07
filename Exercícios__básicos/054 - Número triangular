@@ -1,0 +1,22 @@
+/*Construa um programa que receba um número e verifique se ele é um número triangular.*/
+#include <stdio.h>
+#include <locale.h>
+
+int main(){
+	setlocale(LC_ALL, "Portuguese");
+	
+	int i, numero;
+	
+	printf ("Digite um número para ser verificado: ");
+	scanf ("%d", &numero);
+	
+	for (i=1; i<=numero; i++){
+	    if (numero == i*(i+1)*(i+2)){
+	        printf ("\nO numero %d é triangular", numero);
+	        printf ("\nFormados pelos numeros %d x %d x %d", i, i+1, i+2);
+	        break;
+	    }
+	    else{ printf ("\nO número %d não é triangular", numero); break;}
+	}
+	return 0;
+}

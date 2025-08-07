@@ -1,0 +1,21 @@
+/*Escreva um programa que gere a série de FIBONACCI até o N-ésimo termo (com N sendo uma entrada do algoritmo).*/
+#include <stdio.h>
+#include <locale.h>
+
+int main(){
+	setlocale(LC_ALL, "Portuguese");
+	
+	int i, j, fibonacci = 1, termo, anterior = 0, atual = 1, inter;
+	
+	printf("Digite o número de termos: ");
+	scanf("%d", &termo);
+	
+	while (atual<termo){
+		inter = atual;
+		atual += anterior;
+		anterior = inter;
+		printf("%d ", atual);
+	}
+	
+	return 0;
+}

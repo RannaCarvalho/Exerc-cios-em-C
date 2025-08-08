@@ -1,0 +1,26 @@
+// Número de euler pela série de Taylor
+#include <stdio.h>
+#include <locale.h>
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+    
+    int fatorial, termos;
+    float soma=1.0;
+    int i;
+    
+    printf ("Digite o número de termos: ");
+    scanf ("%d", &termos);
+    
+    for (i=1; i<=termos; i++){
+        fatorial *= i;
+        soma += (1/fatorial);
+
+    }
+    printf ("Número de euler: %0.2f", soma);
+    
+    
+    
+    return 0;
+}

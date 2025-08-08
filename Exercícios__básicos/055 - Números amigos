@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+    
+    int divisores1=0, divisores2=0, num1, num2;
+    int i, j;
+    
+    printf ("Digite dois números para verificar se elese são amigos: ");
+    scanf ("%d %d", &num1, &num2);
+    
+    for (i=1; i<num1; i++){
+        if (num1%i == 0){
+            divisores1 += i;
+        }
+    }
+    for(j=1; j<num2; j++){
+           if (num2%j == 0){
+            divisores2 += j;
+        } 
+    }
+    if (divisores1 == num2 && divisores2 == num1){
+        printf ("\nOs número %d e %d são amigos!", num1, num2);
+    } else{
+        printf ("\nOs números %d e %d não são amigos :(", num1, num2);
+    }
+    
+    return 0;
+}

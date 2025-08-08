@@ -1,0 +1,36 @@
+// Procurar o maior e o menor número do array e suas posições
+#include <stdio.h>
+#include <locale.h>
+#define POSICOES 10
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+    
+    int array[POSICOES];
+    int i, j, maior_num, menor_num, posicao_maior, posicao_menor;
+    
+    printf("Digite um número inteiro para cada posição do vetor: ");
+    for (i=0; i<POSICOES; i++){
+        printf ("\nPosição %d: ", i);
+        scanf ("%d", &array[i]);
+    }
+    
+    maior_num = array[0];
+    menor_num = array[0];
+    
+    for (i=0; i<POSICOES; i++){
+        if (array[i]>maior_num){
+            maior_num = array[i];
+            posicao_maior = i;}
+        if (array[i]<menor_num){
+            menor_num = array[i];
+            posicao_menor = i;}
+        
+    }
+    printf("\nMaior número do vetor: %d, na posição: %d", maior_num, posicao_maior);
+    printf("\nMenor número do vetor: %d, na posição: %d", menor_num, posicao_menor);
+
+    
+    return 0;
+}

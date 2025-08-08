@@ -1,0 +1,26 @@
+// Fazer um array cópia de um array original
+#include <stdio.h>
+#include <locale.h>
+#define POSICOES 10
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+    
+    int array[POSICOES], array_copia[POSICOES], i;
+    
+    printf("Digite um número inteiro para cada posição do vetor: ");
+    for (i=0; i<POSICOES; i++){
+        printf ("\nPosição %d: ", i);
+        scanf ("%d", &array[i]);
+    }
+    for (i=0; i<POSICOES; i++){
+            array_copia[i] = array[i];
+    }
+    printf ("\nArray cópia: ");
+    for (i=0; i<POSICOES; i++){
+        printf ("%d ", array_copia[i]);
+    }
+
+    return 0;
+}

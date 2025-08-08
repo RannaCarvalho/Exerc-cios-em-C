@@ -1,0 +1,28 @@
+// somatório = 1 + 1/n
+#include <stdio.h>
+#include <locale.h>
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+    
+    int elevado, termos, num;
+    float sequencia=1.0;
+    int i,j ;
+    
+    printf ("Digite o número de termos: ");
+    scanf ("%d", &termos);
+    
+    for (i=2; i<=termos; i++){
+        elevado = i;
+        num = i;
+        for (j=0; j<i; j++){
+            num*=elevado;
+        }
+        sequencia += 1.0/num;
+    }
+    
+    printf ("O somatório é igual a : %0.2f", sequencia);
+    
+    return 0;
+}

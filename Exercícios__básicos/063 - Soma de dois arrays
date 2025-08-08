@@ -1,0 +1,33 @@
+// A soma de 2 arrays virar um terceiro array
+#include <stdio.h>
+#include <locale.h>
+#define POSICOES 10
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+    
+    int array1[POSICOES], array2[POSICOES];
+    int vetor[POSICOES], i, j, k=0;
+    
+    printf("Digite um número inteiro para cada posição do primeiro vetor: ");
+    for (i=0; i<POSICOES; i++){
+        printf ("\nPosição %d: ", i+1);
+        scanf ("%d", &array1[i]);
+    }
+    printf("Digite um número inteiro para cada posição do segundo vetor: ");
+    for (j=0; j<POSICOES; j++){
+        printf ("\nPosição %d: ", j+1);
+        scanf ("%d", &array2[j]);
+    }
+    printf ("\nO terceiro vetor é composto por: ");
+    for (i=0; i<POSICOES; i++){
+        for (j=i; j<POSICOES; j++){
+            vetor[k] = array1[i]+array2[j];
+            printf ("%d ", vetor[k]);break;
+        }
+    }
+
+    
+    return 0;
+}

@@ -1,0 +1,26 @@
+// Números de pares dentro de um array
+#include <stdio.h>
+#include <locale.h>
+#define POSICOES 10
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+    
+    int array[POSICOES];
+    int i, par;
+    
+    printf("Digite um número inteiro para cada posição: ");
+    for (i=0; i<POSICOES; i++){
+        printf ("\nPosição %d: ", i+1);
+        scanf ("%d", &array[i]);
+    }
+    for (i=0; i<POSICOES; i++){
+        if (array[i]%2==0){
+            par++;}
+    }
+    printf ("\nNúmero de pares no array: %d", par);
+    
+    
+    return 0;
+}

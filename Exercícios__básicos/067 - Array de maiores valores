@@ -1,0 +1,32 @@
+// Fazer um array cópia de com os maiores valores entre dois outros arrays
+#include <stdio.h>
+#include <locale.h>
+#define POSICOES 10
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+    int array[POSICOES], array2[POSICOES], i, j, k;
+    int vetor[POSICOES];
+    
+    printf("Digite um número inteiro para cada posição do vetor: ");
+    printf("\n");
+    for (i=0; i<POSICOES; i++){
+        printf ("Posição %d: ", i);
+        scanf ("%d", &array[i]);
+    }
+    printf("\nDigite um número inteiro para cada posição do segundo vetor: ");
+    printf("\n");
+    for (i=0; i<POSICOES; i++){
+        printf ("Posição %d: ", i);
+        scanf ("%d", &array2[i]);
+    }
+    for (i=0; i<POSICOES; i++){
+            vetor[i] = (array[i]>array2[i]) ? array[i]:array2[i];
+    }
+    printf ("\nO novo array: ");
+    for (i=0; i<POSICOES; i++){
+            printf("%d ", vetor[i]);
+    }
+    return 0;
+}

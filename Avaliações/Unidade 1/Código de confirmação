@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+    int digitos, d1, d2, d3, d4;
+    int hora, h1, h2, h3, h4;
+    int maior1, maior2, maior3, maior4, sub;
+    int menor1, menor2, menor3, menor4, maior_num, menor_num;
+    int invertido, i1, i2, i3, i4;
+    
+    printf("Digite os 4 digitos finais do cartão: ");
+    scanf ("%d", &digitos);
+    printf("Digite o horario da transição: ");
+    scanf ("%d", &hora);
+    
+    d1 = digitos/1000;
+    d2 = (digitos/100)%10;
+    d3 = (digitos/10)%10;
+    d4 = digitos%10;
+    
+    h1 = hora/1000;
+    h2 = (hora/100)%10;
+    h3 = (hora/10)%10;
+    h4 = hora%10; 
+    
+    maior1 = (d1>h1)? d1:h1;
+    maior2 = (d2>h2)? d2:h2;
+    maior3 = (d3>h3)? d3:h3;
+    maior4 = (d4>h4)? d4:h4;
+    
+    menor1 = (d1<h1)? d1:h1;
+    menor2 = (d2<h2)? d2:h2;
+    menor3 = (d3<h3)? d3:h3;
+    menor4 = (d4<h4)? d4:h4;
+    
+    maior_num = (maior1*1000)+(maior2*100)+(maior3*10)+maior4;
+    menor_num = (menor1*1000)+(menor2*100)+(menor3*10)+menor4;
+    
+    sub = maior_num - menor_num;
+    
+    i1 = sub/1000;
+    i2 = (sub/100)%10;
+    i3 = (sub/10)%10;
+    i4 = sub%10;
+    
+    invertido = (i1*1000)+(i2*100)+(i3*10)+i4;
+    printf("O seu código de confirmação é: %d", invertido);
+
+    return 0;
+}

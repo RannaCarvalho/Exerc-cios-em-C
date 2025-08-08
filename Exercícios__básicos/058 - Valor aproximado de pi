@@ -1,0 +1,26 @@
+// valor aproximado de pi
+#include <stdio.h>
+#include <locale.h>
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+    
+    int potencia, termos, sinal = -1;
+    float pi=1.0;
+    int i;
+    
+    printf ("Digite o número de termos: ");
+    scanf ("%d", &termos);
+    
+    for (i=3; i<=termos; i++){
+        if (i%2 != 0){
+            potencia = i*i*i;
+            pi += (1.0/potencia)*sinal;
+        }
+    }
+    
+    printf ("O somatório é igual a : %0.2f", pi);
+    
+    return 0;
+}

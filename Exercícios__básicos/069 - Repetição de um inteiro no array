@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <locale.h>
+#define POSICOES 15
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+    
+    int i, numero, qtd_numero=0;
+    int array[POSICOES];
+    
+    printf("Digite 15 valores inteiros:\n");
+    for (i=0; i<POSICOES; i++){
+        printf("Posição %d: ", i+1);
+        scanf ("%d", &array[i]);
+    }
+    printf("\nDigite um inteiro a ser verificado: ");
+    scanf("%d", &numero);
+    
+    for (i=0; i<POSICOES; i++){
+        if (array[i] == numero){
+            qtd_numero++;
+        }
+    }
+    printf("O número %d aparece %d vezes", numero, qtd_numero);
+    
+    return 0;
+}

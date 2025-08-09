@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <locale.h>
+#define MAX 10
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+    
+    int i, apareceu, posicao, numero, busca=1;
+    int array[MAX];
+    
+    printf("Digite 10 valores:\n");
+    for (i=0; i<MAX; i++){
+        printf("Posição %d: ", i+1);
+        scanf ("%d", &array[i]);
+    }
+
+    printf("\nDigite um inteiro a ser verificado: ");
+    scanf("%d", &numero);
+    for (i=0; i<MAX && busca==1; i++){
+        if (array[i]==numero){
+            posicao = i+1;
+            busca = 0;
+            break;
+        }
+        else{
+            posicao = -1;
+        }
+    }
+    printf ("O número %d aparece primeiro na posicao %d", numero, posicao);
+
+    return 0;
+}

@@ -1,0 +1,47 @@
+// índices pluviométricos de duas semanas
+#include <stdio.h>
+#include <locale.h>
+#define POSICOES 14
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+    
+    float indices[POSICOES], media1 = 0, media2 = 0;
+    float max_chuva, min_chuva;
+    int i, max_dia = 1, min_dia = 1;
+    
+    printf("Digite o índice pluviométrico de cada dia:\n");
+    for (i = 0; i < POSICOES; i++) {
+        printf("Dia %d: ", i + 1);
+        scanf("%f", &indices[i]);
+    }
+
+    max_chuva = indices[0];
+    min_chuva = indices[0];
+
+    for (i = 0; i < POSICOES; i++) {
+        if (indices[i] > max_chuva) {
+            max_chuva = indices[i];
+            max_dia = i + 1;
+        }
+        if (indices[i] < min_chuva) {
+            min_chuva = indices[i];
+            min_dia = i + 1;
+        }
+        if (i < 7) 
+            media1 += indices[i];  // Primeira semana
+        else 
+            media2 += indices[i];  // Segunda semana
+    }
+    
+    media1 /= 7;
+    media2 /= 7;
+    
+    printf("\nDia que mais choveu: %d (%.2f mm)\n", max_dia, max_chuva);
+    printf("Dia que menos choveu: %d (%.2f mm)\n", min_dia, min_chuva);
+    printf("Média da primeira semana: %.2f\n", media1);
+    printf("Média da segunda semana: %.2f\n", media2);
+
+    return 0;
+}

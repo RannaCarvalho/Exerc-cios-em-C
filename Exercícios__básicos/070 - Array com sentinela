@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <locale.h>
+#define MAX 100
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+    
+    int i, repeticoes=0, atual;
+    int array[MAX];
+    
+    printf("Digite os valores do seu vetor:\n");
+    for (i=0; i<MAX && atual!= -1; i++){
+        printf("Posição %d: ", i+1);
+        scanf ("%d", &atual);
+        if (atual != -1){
+            array[i] = atual;
+            repeticoes++;
+        }
+    }
+
+    printf("Seu array: ");
+    for (i=0; i<repeticoes; i++){
+        printf("%d ", array[i]);
+    }
+
+    return 0;
+}

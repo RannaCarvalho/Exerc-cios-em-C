@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <locale.h>
+#define MAX 100
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+    
+    int i, j, numero, eh_igual=0, sequencia, soma;
+    int array[MAX], tam=0, n1, n2;
+    
+    printf("\nDigite um inteiro a ser verificado: ");
+    scanf("%d", &numero);
+    
+    for (i=0; i<MAX && eh_igual==0; i++){
+        array[i] = numero;
+        eh_igual = 0;
+        n1= (numero/10);
+        n2=numero%10;
+        numero = (n1*n1)+(n2*n2);
+        if (numero>100) numero=numero/2;
+        for (j=numero; j<i; j++){
+            if (numero==array[j]){
+                eh_igual=1;
+            }
+        }
+    }
+    tam = i;
+    printf("Sequência: ");
+    for(i=0; i<tam; i++){
+        printf("%d ", array[i]);
+    }
+    
+
+    return 0;
+}

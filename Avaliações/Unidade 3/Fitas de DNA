@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <locale.h>
+#define TAM 9
+
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+    char str[5][TAM];
+    char linha_final, linha_atual;
+    char final [TAM];
+    int i, j, k, mais_rpetido=0, repetido=0;
+    
+    for (i=0; i<5; i++){
+            printf("Digite a faixa %d: ", i);
+            fgets(str[i], TAM, stdin);
+    }
+    for (j=0; j<TAM; j++){
+        for (i=0; i<5; i++){
+            linha_atual = str[i][j];
+            for (k=0; k<5; k++){
+                if(linha_atual==str[k][j])
+                    repetido++;
+            }
+            if (mais_rpetido<repetido){
+                mais_rpetido=repetido;
+                linha_final = linha_atual;
+            }
+            else if (mais_rpetido==repetido){
+                linha_final = '?';
+            }
+        }
+        final[i]=linha_final;
+    }
+    printf("Linha final: ");
+    puts(final);
+    return 0;
+}

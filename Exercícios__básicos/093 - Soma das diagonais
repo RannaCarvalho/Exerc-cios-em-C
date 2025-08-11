@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <locale.h>
+#define MAX 5
+
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+    int matriz[MAX][MAX];
+    int diagonal_princ=0, diagonal_sec;
+    int i=0, j=0;
+    
+    printf ("Digite os valores da matriz:\n");
+    for(i = 0; i < MAX; i++){
+		for(j = 0; j < MAX; j++){
+			printf("Insira o valor da posição [%d, %d]: ", i, j);
+			scanf("%d", &matriz[i][j]);
+		}
+	}
+	printf("\n");
+    for(i = 0; i < MAX; i++){
+		for(j = 0; j < MAX; j++)
+			printf(" %d ", matriz[i][j]);
+		printf("\n");
+    }
+    for (i=0; i<MAX; i++){
+        for (j=0; j<MAX; j++){
+            if(i==j)
+                diagonal_princ += matriz[i][j];
+            if (i+j == 4)
+                diagonal_sec += matriz[i][j];
+        }
+    }
+    printf("\nSoma dos valores da diagona principal: %d", diagonal_princ);
+    printf("\nSoma dos valores da diagonal secundaria: %d", diagonal_sec);
+    
+    return 0;
+}

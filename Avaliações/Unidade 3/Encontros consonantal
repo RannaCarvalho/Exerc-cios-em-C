@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <locale.h>
+#define TAM 256
+
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+    char str[TAM];
+    int encontros=0, consoantes=0;
+    int i, j;
+    
+    printf("Digite uma string: ");
+    fgets(str, TAM, stdin);
+    
+     while (str[i] != '\0'){
+        if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z')) {
+            if (!(str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u' ||
+                  str[i] == 'A' || str[i] == 'E' || str[i] == 'I' || str[i] == 'O' || str[i] == 'U')) {
+                consoantes++;
+            }else{
+                if(consoantes>=2)
+                    encontros++; 
+                consoantes=0;
+            }
+        }
+        i++;
+    }
+    
+    printf("A quantidade de encontros de consoantes: %d", encontros);
+    return 0;
+}

@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <locale.h>
+#define TAM 5
+
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+    int matriz[TAM][TAM];
+    int linear [TAM*TAM];
+    int i=0, j=0, k=0;
+    
+    printf ("Digite os valores da matriz:\n");
+    for(i = 0; i < TAM; i++){
+		for(j = 0; j < TAM; j++){
+			printf("Insira o valor da posição [%d, %d]: ", i, j);
+			scanf("%d", &matriz[i][j]);
+		}
+	  }
+	  printf("\n");
+	  for(i=0; i<TAM; i++){
+  		for(j=0; j<TAM; j++)
+			  printf(" %d ", matriz[i][j]);
+		  printf("\n");
+	  }	
+    printf("\n");
+    for(i = 0; i < TAM; i++){
+		  for(j = 0; j < TAM; j++)
+			  linear[k++] = matriz[i][j];
+    }
+    printf("\nA linearização da matriz: \n ");
+	  for(k=0; k<TAM*TAM; k++){
+		  printf(" %d ", linear[k]);
+	  } 
+    return 0;
+}

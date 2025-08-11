@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <locale.h>
+#define TAM 5
+
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+    int matriz[TAM][TAM];
+    int x, y, aux;
+    int i=0, j=0;
+    
+    printf ("Digite os valores da primeira matriz:\n");
+    for(i = 0; i<TAM; i++){
+		for(j = 0; j<TAM; j++){
+			printf("Insira o valor da posição [%d, %d]: ", i, j);
+			scanf("%d", &matriz[i][j]);
+		}
+	}
+	printf("\n");
+	for(i=0; i<TAM; i++){
+		for(j=0; j<TAM; j++)
+			printf(" %d ", matriz[i][j]);
+		printf("\n");
+	}
+	
+	printf ("\nDigite os números das linhas e colunas que você deseja trocar: ");
+    scanf("%d %d", &x, &y);
+		
+    for (j=0; j<TAM; j++){
+        aux = matriz[x][j];
+        matriz[x][j] = matriz[y][j];
+        matriz[y][j] = aux;
+    }
+    for (i=0; i<TAM; i++){
+        aux = matriz[i][x];
+        matriz[i][x] = matriz[i][y];
+        matriz[i][y] = aux;
+    }
+    for (i=0; i<TAM; i++){
+        aux = matriz[i][i];
+        matriz[i][i] = matriz[i][TAM-1-i];
+        matriz[i][TAM-1-i] = aux;
+    }
+    printf("\n--- Apos as trocas ---\n");
+    for (i = 0; i < TAM; i++) {
+        for (j = 0; j < TAM; j++) {
+            printf(" %d ", matriz[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}

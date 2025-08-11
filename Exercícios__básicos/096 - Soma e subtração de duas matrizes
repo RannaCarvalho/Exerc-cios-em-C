@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <locale.h>
+#define TAM 5
+
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+    int matriz1[3][4], matriz2[3][4];
+    int soma_matrizes[3][4], sub_matrizes[3][4];
+    int i=0, j=0, k=0;
+    
+    printf ("Digite os valores da primeira matriz:\n");
+    for(i = 0; i < 3; i++){
+		for(j = 0; j < 4; j++){
+			printf("Insira o valor da posição [%d, %d]: ", i, j);
+			scanf("%d", &matriz1[i][j]);
+		}
+	}
+	printf ("Digite os valores da segunda matriz:\n");
+    for(i = 0; i < 3; i++){
+		for(j = 0; j < 4; j++){
+			printf("Insira o valor da posição [%d, %d]: ", i, j);
+			scanf("%d", &matriz2[i][j]);
+		}
+	}
+	printf("\n");
+	for(i=0; i<3; i++){
+		for(j=0; j<4; j++)
+			printf(" %d ", matriz1[i][j]);
+		printf("\n");
+	}
+	printf("\n");
+	for(i=0; i<3; i++){
+		for(j=0; j<4; j++)
+			printf(" %d ", matriz2[i][j]);
+		printf("\n");
+	}
+	printf("\n");
+    for(i = 0; i < 3; i++){
+		for(j = 0; j < 4; j++)
+			soma_matrizes[i][j] = (matriz1[i][j] + matriz2[i][j]);
+    }
+    for(i = 0; i < 3; i++){
+		for(j = 0; j < 4; j++)
+			sub_matrizes[i][j] = (matriz1[i][j] - matriz2[i][j]);
+    }
+    printf("\nA matriz da soma das duas matrizes:\n");
+    for(i = 0; i < 3; i++){
+		for(j = 0; j < 4; j++)
+			printf(" %d ", soma_matrizes[i][j]);
+    }
+    printf("\nA matriz da subtração das duas matrizes:\n");
+    for(i = 0; i < 3; i++){
+		for(j = 0; j < 4; j++)
+			printf(" %d ", sub_matrizes[i][j]);
+    }
+    return 0;
+}

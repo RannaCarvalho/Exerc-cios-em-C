@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <locale.h>
+#define MAX 200
+
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+    char str[MAX], nova_str[MAX];
+    int i, j, tam=0 ;
+    
+    printf ("Digite uma string: ");
+    fgets (str, MAX, stdin);
+    
+    for(i=0;str[i]!='\0' && str[i]!='\n';i++){
+        tam++;
+    }
+    for(i=tam, j=0; i>=0;i--, j++){
+        nova_str[i] = str[j];        
+    }
+    puts (nova_str);
+    return 0;
+}

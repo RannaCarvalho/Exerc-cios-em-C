@@ -1,0 +1,28 @@
+#include <stdio.h>
+#define TAM 15
+#include <locale.h>
+
+int main(){
+    int v[TAM], i, j, aux;
+    
+    setlocale(LC_ALL, "Portuguese");
+    
+    printf ("Digite 15 valores do array: ");
+    for(i=0;i<TAM;i++){
+        printf ("\nPosição %d: ", i);
+        scanf("%d",&v[i]);
+    }
+    
+    for(i=0;i<TAM-1;i++)
+        for(j=0;j<TAM-1-i;j++)
+            if(v[j] > v[j+1]){
+                aux = v[j];
+                v[j] = v[j+1];
+                v[j+1] = aux;
+            }
+    printf("\nVetor ordenado: ")
+    for(i=0;i<TAM;i++)
+        printf("%d ", v[i]);
+        
+    return 0;
+}

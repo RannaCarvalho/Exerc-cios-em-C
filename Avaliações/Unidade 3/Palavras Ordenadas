@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <locale.h>
+#define TAM 256
+
+
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+    char str[TAM];
+    char c_atual, c_proximo;
+    int i=0, ordenada=1;
+    
+    printf("Digite uma palavra a ser veficada: ");
+    fgets(str, TAM, stdin);
+    for (i = 0; str[i] != '\0'; i++) {
+        if (str[i] == '\n') {
+            str[i] = '\0';
+            break; 
+        }
+    }
+    i=0;
+    while (str[i+1] != '\0'){
+        c_atual = str[i];
+        c_proximo = str[i+1];
+        if (c_atual>='a' && c_atual<='z'){
+            c_atual = c_atual - 'a' + 'A';
+        }
+        if (c_proximo>='a' && c_proximo<='z'){
+            c_proximo = c_proximo - 'a' + 'A';
+        }
+        if(c_atual>c_proximo){
+            ordenada=0;break;
+        }
+        i++;
+    }
+    if(ordenada==1){
+        printf("A palavra é ordenada");
+    }else{
+        printf ("A palavra não é ordenada");
+    }
+    
+    return 0;
+}

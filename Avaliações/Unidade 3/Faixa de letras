@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <locale.h>
+#define TAM 256
+
+
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+    char str[TAM], letra, letra_ini, letra_fim;
+    int alfabeto[26]={0};
+    int i=0;
+    
+    printf("Digite uma palavra a ser veficada: ");
+    fgets(str, TAM, stdin);
+    
+    for (i=0; str[i]!='\0' && str[i]!='\n'; i++){
+        letra = str[i];
+        if (letra>='A' && letra<='Z'){
+            letra = letra - 'A'  + 'a';
+        }
+        if (letra>='a' && letra<='z'){
+            alfabeto[letra-'a'] = 1;
+        }           
+    }
+    for (i=0; i<26; i++){
+        if (alfabeto[i]==1){
+            letra_ini = i+'a';
+            while(i+1<26 && alfabeto[i+1]==1){
+                i++;
+            }
+            letra_fim= i+'a';
+            printf(" %c:%c ", letra_ini, letra_fim);
+        }
+    }
+    printf("\n");
+    return 0;
+}
